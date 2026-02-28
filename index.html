@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#19a2ae">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Profile card component</title>
+  <title>Profile card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-  Victor Crest
-  26
-  London
 
-  80K
-  Followers
+<body class="page">
+  <main>
+    <article class="profile-card">
+      <div class="profile-card__cover"></div>
 
-  803K
-  Likes
+      <img src="./assets/images/image-victor.jpg" alt="Victor Crest smiling at the camera" class="profile-card__avatar">
 
-  1.4K
-  Photos
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <div class="profile-card__body">
+        <div class="profile-card__name">
+          <h1>Victor Crest</h1>
+          <p>26</p>
+        </div>
+        <p>London</p>
+      </div>
+
+      <ul class="profile-card__stats">
+        <li>
+          <strong>80K</strong>
+          <span>Followers</span>
+        </li>
+        <li>
+          <strong>803K</strong>
+          <span>Likes</span>
+        </li>
+        <li>
+          <strong>1.4K</strong>
+          <span>Photos</span>
+        </li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <small>
+      Challenge by <a href="https://www.frontendmentor.io/challenges" target="_blank" rel="noopener noreferrer">Frontend
+        Mentor</a> - Coded by <a href="#" rel="noopener noreferrer">VIMP</a>
+    </small>
+  </footer>
 </body>
+
 </html>

@@ -1,119 +1,168 @@
-# Frontend Mentor - Profile card component solution
+# 🚀 Frontend Mentor - Profile card component solution
 
-This is a solution to the [Profile card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Profile card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ).  
+The goal was to build a responsive profile card from a provided design.
+Beyond matching the layout, I focused on accessibility, semantic structure, and clean CSS architecture.
 
-## Table of contents
+---
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-  - [AI Collaboration](#ai-collaboration)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+## 🎬 Demo
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+![](./docs/demo.gif)
 
-## Overview
+---
 
-### The challenge
+## 🎯 The challenge
 
 - Build out the project to the designs provided
 
-### Screenshot
+## 📸 Screenshots
 
-![](./screenshot.jpg)
+### 📱 Mobile
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+![](./docs/mobile-default.avif)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+### 📱 Tablet
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+![](./docs/tablet-default.avif)
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+### 🖥️ Desktop
 
-### Links
+![](./docs/desktop-default.avif)
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+### 🖥️ Desktop - Interaction states (Hover & Focus-Visible)
 
-## My process
+![](./docs/desktop-interaction.avif)
 
-### Built with
+---
 
-- Semantic HTML5 markup
+## 🔗 Links
+
+- 🌎 [Live site](https://vimpdev.github.io/fem-06-profile-card-component/)
+<!-- - 👩‍💻 [Frontend Mentor solution](https://your-solution-url.com) -->
+
+---
+
+## 🛠️ Built with
+
+- Semantic HTML5
+- Mobile-first workflow
 - CSS custom properties
+- CSS Nesting
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Accessible interaction states (`:focus-visible`)
+- Open Graph & Twitter meta tags
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+---
 
-### What I learned
+## 🧠 Key Implementation Decisions
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+### 1️⃣ Layout Architecture
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+The page uses a flex-based vertical structure:
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.page {
+  min-block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+The card itself is centered without using positioning hacks, and the avatar overlaps the cover using:
+```css
+.profile-card__avatar {
+  position: absolute;
+  top: 8.75rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 ```
+This keeps the layout structurally coherent and avoids magic numbers tied to visual compensation.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+### 2️⃣ Background Composition
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+The circular background patterns were implemented using layered `background` values and responsive viewport units:
+```css
+background:
+  url(...) no-repeat left -95vw top -45vh / 150vw,
+  url(...) no-repeat right -95vw bottom -30vh / 150vw,
+  var(--blue-600);
+```
+At larger breakpoints, the background size and positioning are adjusted to maintain visual balance.
 
-### Continued development
+This was one of the most interesting parts of the challenge.
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+### 3️⃣ CSS Nesting
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I used modern CSS nesting with direct child combinators (`>`) for clearer structure:
+```css
+.profile-card__body {
+  > p {
+    margin-top: 0.5rem;
+  }
+}
+```
+#### 📖 Resource used:
 
-### Useful resources
++ [Nesting](https://web.dev/learn/css/nesting?hl=es-419) by [web.dev](https://web.dev/)
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+### 4️⃣ Accessibility
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- `:focus-visible` states for interactive links
+- Proper heading hierarchy
+- Semantic grouping
+- Meaningful `alt` attributes
+- Open Graph and Twitter `og:image:alt` metadata
 
-### AI Collaboration
+The desktop interaction preview intentionally shows hover and focus-visible states.
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+### 5️⃣ SEO & Social Metadata
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+Added:
 
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+- Optimized `<title>`
+- Meta description
+- Open Graph tags
+- Twitter Card tags
+- `og:image:alt` and `twitter:image:alt`
 
-## Author
+This ensures the project previews correctly when shared on LinkedIn, Twitter, or Discord.
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+#### 📖 Resource used:
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- [OG - OpenGraph](https://www.opengraph.xyz/)
 
-## Acknowledgments
+---
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+## 📈 What I learned
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- How to position layered background SVGs using viewport units instead of fixed pixel offsets
+- The difference between visual compensation and structural alignment
+- How to use CSS nesting in a clean and readable way
+- The importance of consistent branding across projects
+
+---
+
+## 🤖 AI Collaboration
+
+AI was used as a reasoning and review assistant during this project. It supported:
+
+- Layout and positioning analysis  
+- Background composition refinement  
+- Structural CSS decisions  
+- Commit naming consistency  
+- README clarity and metadata improvements  
+
+All implementation decisions were manually evaluated, adapted, and coded as part of my learning process.
+
+---
+
+## 👤 Author
+
+- Frontend Mentor - [@vimpdev](https://www.frontendmentor.io/profile/vimpdev)
+
+---
+
+## 🙌 Acknowledgments
+
+Thanks to Frontend Mentor for providing structured design challenges that help simulate real-world UI implementation.

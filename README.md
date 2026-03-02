@@ -39,7 +39,7 @@ Beyond matching the layout, I focused on accessibility, semantic structure, and 
 ## 🔗 Links
 
 - 🌎 [Live site](https://vimpdev.github.io/fem-06-profile-card-component/)
-<!-- - 👩‍💻 [Frontend Mentor solution](https://your-solution-url.com) -->
+- 👩‍💻 [Frontend Mentor solution](https://www.frontendmentor.io/solutions/profile-card-component-semantic-and-accessible-implementation-XD5hCmVnq7)
 
 ---
 

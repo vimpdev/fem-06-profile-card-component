@@ -21,14 +21,11 @@ html {
 body,
 h1,
 p,
-ul {
+dl, 
+dd {
   margin: 0;
 }
 
-ul {
-  padding-left: 0;
-  list-style-type: none;
-}
 
 img {
   display: block;
@@ -138,19 +135,19 @@ a {
 
   border-top: 1px solid var(--gray-100);
 
-  li {
+  div {
     flex: 1;
     display: grid;
     gap: .22rem;
     text-align: center;
 
-    strong {
+    dt {
       font-size: 1.125rem;
       font-weight: 700;
       color: var(--navy-950);
     }
 
-    span {
+    dd {
       font-size: 0.625rem;
       font-weight: 400;
       letter-spacing: 1.5px;
